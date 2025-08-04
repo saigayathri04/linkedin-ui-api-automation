@@ -1,0 +1,12 @@
+selenium==4.16.0
+requests
+pytest
+pytest-htmlimport pytest
+from browser_wrapper import Browser
+
+@pytest.fixture
+def browser():
+    driver_path = r"C:\web\chromedriver.exe"
+    browser = Browser(driver_path, headless=False)
+    yield browser
+    browser.close_browser()
