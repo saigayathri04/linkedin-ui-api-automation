@@ -1,7 +1,7 @@
 import sys
 import os
 
-# 👇 Fix absolute import path
+
 sys.path.append(os.path.abspath(os.path.dirname(__file__)))
 
 from browser_wrapper import Browser
