@@ -1,104 +1,82 @@
-# 🤖 LinkedIn Login Automation Suite – UI + API Testing
+# LinkedIn Login Automation – UI and API Testing
 
-This project combines **Selenium-based UI automation** and **API validation** using Python's `requests` module, structured using **PyTest**. It focuses on testing LinkedIn login functionality through both front-end and back-end layers. Clean reporting is integrated via `pytest-html` to visualize the results.
-
----
-
-## ⚙️ Tech Stack Overview
-
-| Tool           | Role in Project                     |
-|----------------|--------------------------------------|
-| Python         | Scripting language for automation    |
-| Selenium       | Automates LinkedIn web UI actions    |
-| PyTest         | Organizes and runs test cases        |
-| Requests       | Used for REST API validation         |
-| pytest-html    | Generates visual HTML reports        |
-| Git + GitHub   | Version control and repo hosting     |
-| PyCharm        | Development environment              |
+This project automates LinkedIn's login functionality using Selenium and validates a sample public API using the `requests` library. The tests are managed using the PyTest framework, and results are captured in an HTML report.
 
 ---
 
-## 🧱 Folder Structure
+## Tools & Technologies
+
+- **Python** – Scripting language
+- **Selenium WebDriver** – Browser automation for UI testing
+- **Requests** – Python HTTP library for API testing
+- **PyTest** – Test runner and framework
+- **pytest-html** – Plugin to generate HTML reports
+- **Git & GitHub** – Version control and code hosting
+- **PyCharm** – Development environment
+
+---
+
+## Project Structure
 
 linkedin_ui_api_automation/
 │
-├── init.py # Makes this a Python package
-├── browser_wrapper.py # Initializes the WebDriver
-├── conftest.py # Shared PyTest setup/configuration
-├── linkedin_page.py # Page Object Model for LinkedIn UI
-├── test_linkedin.py # UI login test case
-├── test_api.py # REST API test validations
+├── init.py # Makes the folder a Python package
+├── browser_wrapper.py # Sets up and manages the WebDriver
+├── conftest.py # Shared PyTest fixture configuration
+├── linkedin_page.py # Page Object for LinkedIn login elements
+├── test_linkedin.py # Test case for LinkedIn UI login
+├── test_api.py # REST API validation test
 ├── pytest.ini # PyTest configuration file
-├── requirements.txt # All dependencies listed here
-├── report.html # Generated after each test run
-├── README.md # Project documentation (this file)
+├── requirements.txt # Lists required Python packages
+├── report.html # Test report generated after execution
+├── README.md # Project documentation
 
 yaml
-Copy
-Edit
+## How to Run
 
----
-
-## 🔧 Getting Started
-
-### 1. Clone the Repository
-
-''bash
+### 1. Clone the repository
+'''bash
 git clone https://github.com/saigayathri04/linkedin-ui-api-automation.git
 cd linkedin-ui-api-automation
-2. (Optional) Create and Activate a Virtual Environment
+2. (Optional) Set up a virtual environment
 bash
 Copy
 Edit
 python -m venv venv
-venv\Scripts\activate   # On Windows
-3. Install Required Packages
+venv\Scripts\activate  # On Windows
+3. Install dependencies
 bash
 Copy
 Edit
 pip install -r requirements.txt
-✅ Running the Tests
-To execute the complete test suite and generate an HTML report:
-
+4. Run the test suite and generate report
 bash
 Copy
 Edit
 pytest --html=report.html --self-contained-html
-You can open report.html in any browser to view the results.
+The report.html file will be created in the root directory. You can open it in a browser to view the test results.
 
-🔍 Test Case Summary
+Test Overview
 File	Description
-test_linkedin.py	Automates login test via web UI
-test_api.py	Verifies API status code and payload
-linkedin_page.py	Encapsulates LinkedIn page elements
-browser_wrapper.py	WebDriver init logic
+test_linkedin.py	Tests login with valid and invalid data
+test_api.py	Validates API response status and payload
+linkedin_page.py	Contains web element locators and actions
+browser_wrapper.py	Manages browser startup and teardown
 
-🖼️ Screenshots on Failure (Optional)
-You can enhance test feedback by capturing screenshots on test failure and saving them under an assets/ directory using PyTest hooks or exception handling.
+Optional: Screenshots on Failure
+You can enhance the tests by saving screenshots when a test fails. These can be added using try-except blocks or PyTest hooks and stored in a dedicated folder.
 
-📄 HTML Reports
-After each run, a detailed HTML report (report.html) is auto-generated with:
+Future Improvements
+Add retries for flaky tests
 
-Test results
+Integrate with CI tools like Jenkins
 
-Execution time
+Use .env files to manage sensitive data
 
-Environment details
+Enable parallel test execution with pytest-xdist
 
-(Optional) Screenshots
+Containerize the setup using Docker
 
-🛠 Planned Enhancements
- Add retry mechanism for unstable tests using pytest-rerunfailures
-
- Integrate with Jenkins for scheduled runs and CI/CD
-
- Add Docker support for containerized test runs
-
- Secure credential management using .env files
-
- Enable parallel execution using pytest-xdist
-
-👩‍💻 Maintainer
+Maintainer
 Sai Gayathri
-
 GitHub: @saigayathri04
